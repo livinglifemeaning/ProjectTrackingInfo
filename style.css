@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
+
+:root {
+  --f-headings: "Barlow Condensed", sans-serif;
+  --f-body: "Barlow", sans-serif;
+  --c-red: hsl(0, 100%, 68%);
+  --c900: hsl(230, 29%, 20%);
+  --c800: hsl(230, 11%, 40%);
+  --c700: hsl(231, 7%, 65%);
+  --c200: hsl(207, 33%, 95%);
+  --p-mobile: 1.25rem;
+  --p-desktop: 10rem; 
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: var(--f-headings);
+  text-transform: uppercase;
+  margin: 0;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+main,
+header,
+.body {
+  width: 100%;
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+/* General Styles */
+.body {
+  position: relative;
+  overflow-x: hidden;
+}
+header {
+  padding: 2rem var(--p-mobile) 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main {
+  padding: 0 var(--p-mobile) 5rem;
+  position: relative;
+}
+
+.toggleContainer.closed .closeArrow,
+.toggleContainer.mobile.closed .nav {
+  display: none;
+}
+
+.toggleContainer.closed .hamburger,
+.toggleContainer .closeArrow {
+  display: block;
+}
+.toggleContainer .hamburger {
+  display: none;
+}
+
+.toggleContainer.mobile {
+  position: relative;
+}
+.toggleContainer.mobile .navContainer {
+  display: block;
+  position: absolute;
+  bottom: -250px;
+  translate: -80vw;
+  z-index: 100;
+}
+
+.nav {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--c900);
+}
+
+.nav li {
+  cursor: pointer;
+}
+.login {
+  color: var(--c800);
+}
+
+.toggleContainer.mobile .nav {
+  background-color: #fff;
+  box-shadow: 0 10px 10px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 8rem;
+  border-radius: 10px;
+}
+
+.toggleContainer.mobile .login {
+  position: relative;
+  margin-top: 1rem;
+}
+.toggleContainer.mobile .login::before {
+  position: absolute;
+  content: "";
+  background-color: var(--c800);
+  width: 15rem;
+  left: 0;
+  top: -1rem;
+  height: 1px;
+  translate: -100px;
+}
+
+.toggleContainer.desktop .hamburgerMenu {
+  display: none;
+}
+
+.toggleContainer.desktop .nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.toggleContainer.desktop .nav li:hover {
+  text-decoration: underline;
+}
+
+.toggleContainer.desktop .login {
+  position: relative;
+  margin-left: 2rem;
+}
+.toggleContainer.desktop .login::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: var(--c800);
+  border-radius: 50%;
+  left: -2rem;
+  top: 8px;
+}
+.content {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 6rem;
+  align-items: flex-start;
+}
+
+.newBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.new {
+  color: #fff;
+  background-color: var(--c900);
+  padding: 0.1rem 0.8rem 0.2rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.dashboard {
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  color: var(--c700);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--c900);
+  line-height: 1em;
+  margin: 1.2rem 0 1rem;
+}
+
+.description {
+  color: var(--c800);
+  text-transform: initial;
+  font-size: 1.3rem;
+  font-family: var(--f-body);
+  line-height: 1.3em;
+}
+
+.ctaBox {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--c700);
+}
+
+.btn {
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--c-red);
+  border: 0;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:active {
+  scale: 0.98;
+}
+.btn:hover {
+  background-color: hsl(0, 100%, 75%);
+}
+
+.imageBox {
+  margin-bottom: 6rem;
+  scale: 1.4;
+  translate: 15vw;
+}
+
+.bg {
+  position: absolute;
+  background-color: var(--c200);
+  width: 55vw;
+  height: 30rem;
+  top: -13vh;
+  right: -10vw;
+  z-index: -1;
+  border-radius: 50px;
+}
+
+@media (min-width: 750px) {
+  header,
+  main {
+    padding-left: var(--p-desktop);
+    padding-right: var(--p-desktop);
+  }
+
+  header{
+    padding-top: 4rem; 
+  }
+
+  .content{
+    flex-direction: row; 
+    align-items: center; 
+  }
+
+  .title{
+    font-size: 3.5rem; 
+    max-width: 30rem; 
+  }
+
+  .description{
+    max-width: 20rem; 
+  }
+  .imageBox{
+    scale: 1; 
+    margin: 0; 
+  }
+  .ctaBox{
+    justify-content: flex-start;
+    gap: 2rem; 
+  }
+
+  .bg{
+    width: 60vw; 
+  }
+}
