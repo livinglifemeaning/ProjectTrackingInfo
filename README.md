@@ -11,8 +11,8 @@ Users should be able to:
 - Create the background shape using code
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/livinglifemeaning/ProjectTrackingInfo
+- Live Site URL: https://livinglifemeaning.github.io/ProjectTrackingInfo/
 
 ### Built with
 
